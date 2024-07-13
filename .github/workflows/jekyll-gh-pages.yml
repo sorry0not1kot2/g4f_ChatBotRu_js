@@ -29,6 +29,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # Отключаем автоматическое создание сайта GitHub Pages
+          enablement: false
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
@@ -49,9 +52,9 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '16' # Или укажите '20'
       - name: Install gpt4free
         run: npm install gpt4free  # Установка gpt4free
       - name: Install dependencies
