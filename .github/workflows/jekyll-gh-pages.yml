@@ -1,27 +1,20 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +23,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          # Отключаем автоматическое создание сайта GitHub Pages
           enablement: false
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
@@ -40,7 +32,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -56,7 +47,7 @@ jobs:
         with:
           node-version: '16' # Или укажите '20'
       - name: Install gpt4free
-        run: npm install gpt4free  # Установка gpt4free
+        run: npm install gpt4free
       - name: Install dependencies
         run: npm install
       - name: Run Telegram Bot
