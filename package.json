@@ -1,19 +1,19 @@
 {
-  "name": "my-jekyll-telegram-bot", // Замените на имя вашего проекта
+  "name": "my-jekyll-telegram-bot", 
   "version": "1.0.0",
   "description": "Jekyll site with a Telegram bot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js"  // Добавить скрипт "start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/your-repo.git" // Замените на адрес вашего репозитория
+    "url": "git+https://github.com/your-username/your-repo.git" 
   },
-  "author": "Your Name", // Замените на ваше имя
+  "author": "Your Name", 
   "license": "MIT",
   "dependencies": {
     "telegraf": "^4.10.0",
-    "gpt4free": "^1.0.0" // Замените на актуальную версию
+    "gpt4free": "^1.0.0" 
   }
 }
