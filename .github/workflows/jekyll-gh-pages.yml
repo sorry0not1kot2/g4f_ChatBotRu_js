@@ -14,6 +14,8 @@ jobs:
           node-version: '16' # Или укажите '20'
       - name: Install dependencies
         run: npm install
+      - name: Install gpt4free
+        run: npm install gpt4free
       - name: Run Telegram Bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }} # Используем секрет
