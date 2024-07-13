@@ -1,6 +1,6 @@
 // файл index.js
 const { Telegraf } = require('telegraf');
-import * as g4f from 'gpt4free'; // Импорт g4f как в Python
+const g4f = require('gpt4free'); // Импорт g4f как в Python
 
 const bot = new Telegraf(process.env.BOT_TOKEN); // Замените на ваш токен бота
 
@@ -13,7 +13,7 @@ bot.on('text', async (ctx) => {
       [{ role: 'user', content: ctx.message.text }],
       { model: 'gpt-4o-2024-05-13' } // Модель GPT-4o
     );
-    ctx.reply(response);
+    ctx.reply(response.choices[0].message.content); // Убедитесь, что вы правильно обрабатываете ответ
   } catch (error) {
     console.error('Ошибка:', error);
     ctx.reply('Произошла ошибка. Попробуйте позже.');
