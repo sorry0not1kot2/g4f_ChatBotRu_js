@@ -4,7 +4,7 @@
   "description": "Jekyll site with a Telegram bot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"  // Добавить скрипт "start"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
