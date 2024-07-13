@@ -39,17 +39,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '16' # Или укажите '20'
-      - name: Install gpt4free
-        run: npm install gpt4free
       - name: Install dependencies
         run: npm install
+      - name: Install gpt4free
+        run: npm install gpt4free
       - name: Run Telegram Bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }} # Используем секрет
