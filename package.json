@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/your-repo.git" 
+    "url": "git+https://github.com/sorry0not1kot2/g4f_ChatBotRu_js.git" 
   },
-  "author": "Your Name", 
+  "author": "don dron", 
   "license": "MIT",
   "dependencies": {
     "telegraf": "^4.10.0",
