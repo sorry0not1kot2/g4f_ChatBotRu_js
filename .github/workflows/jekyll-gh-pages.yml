@@ -52,6 +52,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: Install gpt4free
+        run: npm install gpt4free  # Установка gpt4free
       - name: Install dependencies
         run: npm install
       - name: Run Telegram Bot
